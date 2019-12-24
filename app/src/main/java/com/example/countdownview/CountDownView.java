@@ -5,13 +5,11 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -102,6 +100,7 @@ public class CountDownView extends View {
     public void startCountDown() {
         setClickable(false);
         valueAnimator = getValA(mCountdownTime * 1000);
+        //状态更新监听
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -111,6 +110,7 @@ public class CountDownView extends View {
             }
         });
         valueAnimator.start();
+        //状态变化结束监听
         valueAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -153,7 +153,7 @@ public class CountDownView extends View {
         }
     }
 
-    public void setCountDownListener(OnCountDownFinishListener mListener) {
+    public void setCountDownFinishListener(OnCountDownFinishListener mListener) {
         this.mListener = mListener;
     }
 

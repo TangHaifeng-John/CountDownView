@@ -1,6 +1,7 @@
 package com.example.countdownview
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
 
         resume_countdown.setOnClickListener {
             countdown_view.resumeCountDown()
+        }
+        countdown_view.setCountDownFinishListener {
+            Toast.makeText(this,"倒计时结束",Toast.LENGTH_SHORT).show()
         }
     }
 
