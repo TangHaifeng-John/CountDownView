@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/start_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动倒计时"
+        android:textColor="#000000" />
+
+
+    <Button
+        android:id="@+id/pause_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂停倒计时" />
+
+
+    <Button
+        android:id="@+id/resume_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="恢复倒计时" />
+
+
+    <Button
+        android:id="@+id/stop_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止倒计时" />
+
+
+    <com.example.countdownview.CountDownView
+        android:id="@+id/countdown_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:countdownTime="10"
+        app:ringColor="#DC143C"
+        app:ringWidth="2dp" />
+
+
+</LinearLayout>
+
